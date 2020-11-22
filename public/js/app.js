@@ -20483,7 +20483,7 @@ var staticRenderFns = [
                                 _c("img", {
                                   staticClass: "rounded-circle",
                                   attrs: {
-                                    src: "/assets/images/users/1.jpg",
+                                    src: "/imagens/notfound.png",
                                     width: "30"
                                   }
                                 })
@@ -20505,7 +20505,7 @@ var staticRenderFns = [
                                 _c("img", {
                                   staticClass: "rounded-circle",
                                   attrs: {
-                                    src: "/assets/images/users/1.jpg",
+                                    src: "/imagens/notfound.png",
                                     width: "30"
                                   }
                                 })
@@ -20527,7 +20527,7 @@ var staticRenderFns = [
                                 _c("img", {
                                   staticClass: "rounded-circle",
                                   attrs: {
-                                    src: "/assets/images/users/1.jpg",
+                                    src: "/imagens/notfound.png",
                                     width: "30"
                                   }
                                 })
@@ -20549,7 +20549,7 @@ var staticRenderFns = [
                                 _c("img", {
                                   staticClass: "rounded-circle",
                                   attrs: {
-                                    src: "/assets/images/users/1.jpg",
+                                    src: "/imagens/notfound.png",
                                     width: "30"
                                   }
                                 })
@@ -20571,7 +20571,7 @@ var staticRenderFns = [
                                 _c("img", {
                                   staticClass: "rounded-circle",
                                   attrs: {
-                                    src: "/assets/images/users/1.jpg",
+                                    src: "/imagens/notfound.png",
                                     width: "30"
                                   }
                                 })
@@ -21089,13 +21089,13 @@ var staticRenderFns = [
                 _c("img", {
                   staticClass: "rounded-circle",
                   attrs: {
-                    src: "assets/images/users/1.jpg",
+                    src: "/imagens/user-perfil-padrao.jpeg",
                     alt: "user",
                     width: "40"
                   }
                 }),
                 _vm._v(
-                  "\n                                muinha\n                            "
+                  "\n                                    muinha\n                                "
                 )
               ])
             ]),
@@ -21110,7 +21110,7 @@ var staticRenderFns = [
               _c(
                 "a",
                 {
-                  staticClass: "btn btn-primary btn-circle",
+                  staticClass: "btn btn-primary btn-circle btn-sm",
                   attrs: { href: "" }
                 },
                 [_c("i", { staticClass: "fa fa-user" })]
@@ -21118,14 +21118,17 @@ var staticRenderFns = [
               _vm._v(" "),
               _c(
                 "a",
-                { staticClass: "btn btn-info btn-circle", attrs: { href: "" } },
+                {
+                  staticClass: "btn btn-info btn-circle btn-sm",
+                  attrs: { href: "" }
+                },
                 [_c("i", { staticClass: "fa fa-edit" })]
               ),
               _vm._v(" "),
               _c(
                 "a",
                 {
-                  staticClass: "btn btn-danger btn-circle btn-delete",
+                  staticClass: "btn btn-danger btn-circle btn-sm",
                   attrs: { href: "" }
                 },
                 [_c("i", { staticClass: "fa fa-trash" })]
@@ -21243,7 +21246,63 @@ var render = function() {
       "nav",
       { staticClass: "navbar top-navbar navbar-expand-md navbar-dark" },
       [
-        _vm._m(0),
+        _c(
+          "div",
+          { staticClass: "navbar-header" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "navbar-brand d-block d-md-none",
+                attrs: { to: { name: "admin.dashboard" } }
+              },
+              [
+                _c("b", { staticClass: "logo-icon" }, [
+                  _c("img", {
+                    staticClass: "dark-logo",
+                    attrs: {
+                      src: "assets/images/logos/logo-icon.png",
+                      alt: "homepage"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "light-logo",
+                    attrs: {
+                      src: "assets/images/logos/logo-light-icon.png",
+                      alt: "homepage"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "logo-text" }, [
+                  _c("img", {
+                    staticClass: "dark-logo",
+                    attrs: {
+                      src: "assets/images/logos/logo-text.png",
+                      alt: "homepage"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("img", {
+                    staticClass: "light-logo",
+                    attrs: {
+                      src: "assets/images/logos/logo-light-text.png",
+                      alt: "homepage"
+                    }
+                  })
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2)
+          ],
+          1
+        ),
         _vm._v(" "),
         _c(
           "div",
@@ -21252,13 +21311,65 @@ var render = function() {
             attrs: { id: "navbarSupportedContent" }
           },
           [
-            _vm._m(1),
+            _c("ul", { staticClass: "navbar-nav float-left mr-auto" }, [
+              _c(
+                "li",
+                { staticClass: "nav-item border-right" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-link navbar-brand d-none d-md-block",
+                      attrs: { to: { name: "admin.dashboard" } }
+                    },
+                    [
+                      _c("b", { staticClass: "logo-icon" }, [
+                        _c("img", {
+                          staticClass: "dark-logo",
+                          attrs: {
+                            src: "assets/images/logos/logo-icon.png",
+                            alt: "homepage"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "light-logo",
+                          attrs: {
+                            src: "assets/images/logos/logo-light-icon.png",
+                            alt: "homepage"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "logo-text" }, [
+                        _c("img", {
+                          staticClass: "dark-logo",
+                          attrs: {
+                            src: "assets/images/logos/logo-text.png",
+                            alt: "homepage"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "light-logo",
+                          attrs: {
+                            src: "assets/images/logos/logo-light-text.png",
+                            alt: "homepage"
+                          }
+                        })
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            ]),
             _vm._v(" "),
             _c("ul", { staticClass: "navbar-nav float-right" }, [
-              _vm._m(2),
+              _vm._m(3),
               _vm._v(" "),
               _c("li", { staticClass: "nav-item dropdown" }, [
-                _vm._m(3),
+                _vm._m(4),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -21267,7 +21378,7 @@ var render = function() {
                       "dropdown-menu dropdown-menu-right user-dd animated flipInY"
                   },
                   [
-                    _vm._m(4),
+                    _vm._m(5),
                     _vm._v(" "),
                     _c(
                       "a",
@@ -21301,97 +21412,35 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "navbar-header" }, [
-      _c(
-        "a",
-        {
-          staticClass: "nav-toggler waves-effect waves-light d-block d-md-none",
-          attrs: { href: "javascript:void(0)" }
-        },
-        [_c("i", { staticClass: "ti-menu ti-close" })]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "navbar-brand d-block d-md-none",
-          attrs: { href: "index.html" }
-        },
-        [
-          _c("b", { staticClass: "logo-icon" }, [
-            _c("img", {
-              staticClass: "dark-logo",
-              attrs: {
-                src: "assets/images/logos/logo-icon.png",
-                alt: "homepage"
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "light-logo",
-              attrs: {
-                src: "assets/images/logos/logo-light-icon.png",
-                alt: "homepage"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "logo-text" }, [
-            _c("img", {
-              staticClass: "dark-logo",
-              attrs: {
-                src: "assets/images/logos/logo-text.png",
-                alt: "homepage"
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "light-logo",
-              attrs: {
-                src: "assets/images/logos/logo-light-text.png",
-                alt: "homepage"
-              }
-            })
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "d-none d-md-block text-center" }, [
-        _c(
-          "a",
-          {
-            staticClass:
-              "sidebartoggler waves-effect waves-light d-flex align-items-center side-start",
-            attrs: {
-              href: "javascript:void(0)",
-              "data-sidebartype": "mini-sidebar"
-            }
-          },
-          [
-            _c("i", { staticClass: "mdi mdi-menu" }),
-            _vm._v(" "),
-            _c("span", { staticClass: "navigation-text ml-3" }, [
-              _vm._v(" Navigation")
-            ])
-          ]
-        )
-      ]),
-      _vm._v(" "),
+    return _c(
+      "a",
+      {
+        staticClass: "nav-toggler waves-effect waves-light d-block d-md-none",
+        attrs: { href: "javascript:void(0)" }
+      },
+      [_c("i", { staticClass: "ti-menu ti-close" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-none d-md-block text-center" }, [
       _c(
         "a",
         {
           staticClass:
-            "topbartoggler d-block d-md-none waves-effect waves-light",
+            "sidebartoggler waves-effect waves-light d-flex align-items-center side-start",
           attrs: {
             href: "javascript:void(0)",
-            "data-toggle": "collapse",
-            "data-target": "#navbarSupportedContent",
-            "aria-controls": "navbarSupportedContent",
-            "aria-expanded": "false",
-            "aria-label": "Toggle navigation"
+            "data-sidebartype": "mini-sidebar"
           }
         },
-        [_c("i", { staticClass: "ti-more" })]
+        [
+          _c("i", { staticClass: "mdi mdi-menu" }),
+          _vm._v(" "),
+          _c("span", { staticClass: "navigation-text ml-3" }, [_vm._v(" MENU")])
+        ]
       )
     ])
   },
@@ -21399,54 +21448,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "navbar-nav float-left mr-auto" }, [
-      _c("li", { staticClass: "nav-item border-right" }, [
-        _c(
-          "a",
-          {
-            staticClass: "nav-link navbar-brand d-none d-md-block",
-            attrs: { href: "index.html" }
-          },
-          [
-            _c("b", { staticClass: "logo-icon" }, [
-              _c("img", {
-                staticClass: "dark-logo",
-                attrs: {
-                  src: "assets/images/logos/logo-icon.png",
-                  alt: "homepage"
-                }
-              }),
-              _vm._v(" "),
-              _c("img", {
-                staticClass: "light-logo",
-                attrs: {
-                  src: "assets/images/logos/logo-light-icon.png",
-                  alt: "homepage"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "logo-text" }, [
-              _c("img", {
-                staticClass: "dark-logo",
-                attrs: {
-                  src: "assets/images/logos/logo-text.png",
-                  alt: "homepage"
-                }
-              }),
-              _vm._v(" "),
-              _c("img", {
-                staticClass: "light-logo",
-                attrs: {
-                  src: "assets/images/logos/logo-light-text.png",
-                  alt: "homepage"
-                }
-              })
-            ])
-          ]
-        )
-      ])
-    ])
+    return _c(
+      "a",
+      {
+        staticClass: "topbartoggler d-block d-md-none waves-effect waves-light",
+        attrs: {
+          href: "javascript:void(0)",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": "Toggle navigation"
+        }
+      },
+      [_c("i", { staticClass: "ti-more" })]
+    )
   },
   function() {
     var _vm = this
@@ -21483,7 +21499,11 @@ var staticRenderFns = [
       [
         _c("img", {
           staticClass: "rounded-circle",
-          attrs: { src: "assets/images/users/1.jpg", alt: "user", width: "31" }
+          attrs: {
+            src: "/imagens/user-perfil-padrao.jpeg",
+            alt: "user",
+            width: "31"
+          }
         }),
         _vm._v(" "),
         _c("span", { staticClass: "ml-2 user-text font-medium" }, [
@@ -21507,7 +21527,7 @@ var staticRenderFns = [
           _c("img", {
             staticClass: "rounded",
             attrs: {
-              src: "assets/images/users/1.jpg",
+              src: "/imagens/user-perfil-padrao.jpeg",
               alt: "user",
               width: "80"
             }

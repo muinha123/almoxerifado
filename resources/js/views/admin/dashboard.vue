@@ -104,7 +104,7 @@
                                         <tbody>
                                             <tr class="advanced-table active">
                                                 <td>
-                                                    <img src="/assets/images/users/1.jpg" class="rounded-circle" width="30">
+                                                    <img src="/imagens/notfound.png" class="rounded-circle" width="30">
                                                 </td>
                                                 <td>Produto</td>
                                                 <td>250</td>
@@ -114,7 +114,7 @@
                                             </tr>
                                             <tr class="advanced-table active">
                                                 <td>
-                                                    <img src="/assets/images/users/1.jpg" class="rounded-circle" width="30">
+                                                    <img src="/imagens/notfound.png" class="rounded-circle" width="30">
                                                 </td>
                                                 <td>Produto</td>
                                                 <td>250</td>
@@ -124,7 +124,7 @@
                                             </tr>
                                             <tr class="advanced-table active">
                                                 <td>
-                                                    <img src="/assets/images/users/1.jpg" class="rounded-circle" width="30">
+                                                    <img src="/imagens/notfound.png" class="rounded-circle" width="30">
                                                 </td>
                                                 <td>Produto</td>
                                                 <td>250</td>
@@ -134,7 +134,7 @@
                                             </tr>
                                             <tr class="advanced-table active">
                                                 <td>
-                                                    <img src="/assets/images/users/1.jpg" class="rounded-circle" width="30">
+                                                    <img src="/imagens/notfound.png" class="rounded-circle" width="30">
                                                 </td>
                                                 <td>Produto</td>
                                                 <td>250</td>
@@ -144,7 +144,7 @@
                                             </tr>
                                             <tr class="advanced-table active">
                                                 <td>
-                                                    <img src="/assets/images/users/1.jpg" class="rounded-circle" width="30">
+                                                    <img src="/imagens/notfound.png" class="rounded-circle" width="30">
                                                 </td>
                                                 <td>Produto</td>
                                                 <td>250</td>

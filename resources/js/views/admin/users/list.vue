@@ -23,31 +23,31 @@
                     </div>
                     <table id="demo-foo-row-toggler" class="table table-striped footable footable-1 breakpoint breakpoint-lg" data-toggle-column="first" style="">
                         <thead>
-                        <tr class="footable-header">
-                            <th>Nome</th>
-                            <th class="text-center">Email</th>
-                            <th class="text-center">Ultimo Acesso</th>
-                            <th class="text-center">Perfil Do Sístema</th>
-                            <th class="text-center">Ações</th>
-                        </tr>
+                            <tr class="footable-header">
+                                <th>Nome</th>
+                                <th class="text-center">Email</th>
+                                <th class="text-center">Ultimo Acesso</th>
+                                <th class="text-center">Perfil Do Sístema</th>
+                                <th class="text-center">Ações</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td >
-                                <a href="">
-                                    <img src="assets/images/users/1.jpg" alt="user" width="40" class="rounded-circle">
-                                    muinha
-                                </a>
-                            </td>
-                            <td  class="text-center">teste@teste</td>
-                            <td  class="text-center">15/02/2020</td>
-                            <td  class="text-center">Admnistrador</td>
-                            <td  class="text-center">
-                                <a href="" class="btn btn-primary btn-circle"><i class="fa fa-user"></i> </a>
-                                <a href="" class="btn btn-info btn-circle"><i class="fa fa-edit"></i> </a>
-                                <a href="" class="btn btn-danger btn-circle btn-delete"><i class="fa fa-trash"></i> </a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td >
+                                    <a href="">
+                                        <img src="/imagens/user-perfil-padrao.jpeg" alt="user" width="40" class="rounded-circle">
+                                        muinha
+                                    </a>
+                                </td>
+                                <td  class="text-center">teste@teste</td>
+                                <td  class="text-center">15/02/2020</td>
+                                <td  class="text-center">Admnistrador</td>
+                                <td  class="text-center">
+                                    <a href="" class="btn btn-primary btn-circle btn-sm"><i class="fa fa-user"></i> </a>
+                                    <a href="" class="btn btn-info btn-circle btn-sm"><i class="fa fa-edit"></i> </a>
+                                    <a href="" class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i> </a>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

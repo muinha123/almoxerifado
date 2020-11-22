@@ -13,7 +13,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
                                 </div>
-                                <input v-model="params.email" type="text" class="form-control form-control-lg" placeholder="Digite seu email" aria-label="Username" aria-describedby="basic-addon1">
+                                <input  v-model="params.email" type="text" class="form-control form-control-lg" placeholder="Digite seu email" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
@@ -83,9 +83,13 @@
     </div>
 </template>
 <script>
+    import Vue from 'vue';
+    import VueToast from 'vue-toast-notification';
+    import 'vue-toast-notification/dist/theme-sugar.css';
     import axios from 'axios';
 
     axios.defaults.withCredentials = true;
+    Vue.use(VueToast);
 
     export default {
         data: () => ({
@@ -97,6 +101,8 @@
         }),
         methods: {
             login: function () {
+                let that = this;
+
                 axios.get('/sanctum/csrf-cookie').then(response => {
                     axios.post('/api/login', {
                         email: this.params.email,
@@ -106,7 +112,16 @@
                             window.location.href = '/dashboard';
                             return;
                         }
-                    }).catch(error => console.log(error))
+                    }).catch(function (error) {
+                        that.params.password = "";
+
+                        Vue.$toast.open({
+                            message: 'Dados de acesso inválidos!',
+                            type: 'error',
+                            position: 'top-right',
+                            duration: 7000
+                        });
+                    })
                 });
             },
             back: function () {
