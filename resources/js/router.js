@@ -21,8 +21,13 @@ const router = new VueRouter({
             component: usersList,
         },
         {
-            path: '/user/create',
+            path: '/user',
             name: 'admin.user.create',
+            component: userForm,
+        },
+        {
+            path: '/user/:id',
+            name: 'admin.user.update',
             component: userForm,
         }
     ]

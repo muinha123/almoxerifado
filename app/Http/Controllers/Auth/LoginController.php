@@ -15,13 +15,17 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             return response()->json([
                 'success' => true,
                 'message' => 'Login successful',
-                'user' => Auth::user()
             ], 200);
         }
 

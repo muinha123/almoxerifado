@@ -27,5 +27,5 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
     // dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/{any}', [DashboardController::class, 'index'])->where('any', '^(?!api).*$')->name('admin.dashboard');
 });

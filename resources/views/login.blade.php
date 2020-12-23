@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <title>Ample admin Template - The Ultimate Multipurpose admin template</title>
     <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="{{ asset('css/custon-style.css') }}" rel="stylesheet">
 </head>
 
 <body>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\SystemProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +24,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
-    Route::get('users', [UserController::class, 'index'])->name('admin.users');
+
+    // users
+    Route::get('users', [UserController::class, 'getAll'])->name('admin.users');
+    Route::post('user', [UserController::class, 'save'])->name('admin.users.save');
+    Route::get('user/{id}', [UserController::class, 'get'])->name('admin.users.get');
+    Route::put('user/{id}', [UserController::class, 'update'])->name('admin.users.update');
+    Route::delete('user/{id}', [UserController::class, 'delete'])->name('admin.users.delete');
+
+    // system profile
+    Route::get('system/profile', [SystemProfileController::class, 'getAll'])->name('admin.system.profile');
 });

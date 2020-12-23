@@ -7,20 +7,28 @@
                     <h5 class="font-medium mb-3">Fazer o login no site</h5>
                 </div>
                 <div class="row">
+                    <input-error-laravel :laravelErrors="errors"></input-error-laravel>
                     <div class="col-12">
+                        <ValidationObserver ref="form" v-slot="{ handleSubmit }">
                         <form class="form-horizontal mt-3" action="">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
+                            <validation-provider rules="required|email" v-slot="{ errors }">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="ti-user"></i></span>
+                                    </div>
+                                    <input name="email" :class="errors[0] ? 'error' : ''" v-model="params.email" type="text" class="form-control form-control-lg" placeholder="Digite seu email" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
-                                <input  v-model="params.email" type="text" class="form-control form-control-lg" placeholder="Digite seu email" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                <span class="error">{{ errors[0] }}</span>
+                            </validation-provider>
+                            <validation-provider rules="required" v-slot="{ errors }">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                    </div>
+                                    <input name="password" :class="errors[0] ? 'error' : ''" v-model="params.password" type="password" class="form-control form-control-lg" placeholder="Senha" aria-label="Password" aria-describedby="basic-addon1">
                                 </div>
-                                <input v-model="params.password" type="password" class="form-control form-control-lg" placeholder="Senha" aria-label="Password" aria-describedby="basic-addon1">
-                            </div>
+                                <span class="error">{{ errors[0] }}</span>
+                            </validation-provider>
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
@@ -32,7 +40,7 @@
                             </div>
                             <div class="form-group text-center">
                                 <div class="col-xs-12 pb-3">
-                                    <button class="btn btn-block btn-lg btn-info" type="submit" @click.prevent="login">Entrar</button>
+                                    <button class="btn btn-block btn-lg btn-info" type="submit" @click.prevent="handleSubmit(login)">Entrar</button>
                                 </div>
                             </div>
                             <div class="row">
@@ -49,6 +57,7 @@
                                 </div>
                             </div>
                         </form>
+                        </ValidationObserver>
                     </div>
                 </div>
             </div>
@@ -87,17 +96,25 @@
     import VueToast from 'vue-toast-notification';
     import 'vue-toast-notification/dist/theme-sugar.css';
     import axios from 'axios';
+    import { ValidationProvider, ValidationObserver } from 'vee-validate';
+    import InputErrorLaravel from '../components/error/InputErrorLaravel';
 
     axios.defaults.withCredentials = true;
     Vue.use(VueToast);
 
     export default {
+        components: {
+            ValidationProvider,
+            InputErrorLaravel,
+            ValidationObserver
+        },
         data: () => ({
             params: {
                 email: '',
                 password: '',
                 remember: true
-            }
+            },
+            errors: {}
         }),
         methods: {
             login: function () {
@@ -108,13 +125,15 @@
                         email: this.params.email,
                         password: this.params.password
                     }).then(function (resp) {
-                        if (resp.status === 200){
+                        if (resp.status === 200) {
                             window.location.href = '/dashboard';
                             return;
                         }
                     }).catch(function (error) {
                         that.params.password = "";
-
+                        if (error.response.status == 422) {
+                            that.errors = error.response.data.errors;
+                        }
                         Vue.$toast.open({
                             message: 'Dados de acesso inválidos!',
                             type: 'error',
