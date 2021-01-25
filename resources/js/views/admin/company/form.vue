@@ -3,14 +3,14 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-xs-12 align-self-center">
-                    <h5 class="font-medium text-uppercase mb-0">{{ users.id ? 'Editar' : 'Criar' }} Usuario</h5>
+                    <h5 class="font-medium text-uppercase mb-0">Criar {{ userLogged.branch == 1 ? 'Fornecedor' : 'Empresa'}}</h5>
                 </div>
                 <div class="col-lg-9 col-md-8 col-xs-12 align-self-center">
                     <nav aria-label="breadcrumb" class="mt-2 float-md-right float-left">
                         <ol class="breadcrumb mb-0 justify-content-end p-0">
                             <li class="breadcrumb-item"><router-link :to="{name: 'admin.dashboard'}">Dashboard</router-link></li>
-                            <li class="breadcrumb-item active"><router-link :to="{name: 'admin.dashboard'}">{{ users.id ? 'Editar' : 'Criar' }} Usuario</router-link></li>
-                            <li class="breadcrumb-item active" aria-current="page">Criar Usuario</li>
+                            <li class="breadcrumb-item active"><router-link :to="{name: 'admin.dashboard'}">Lista de {{ userLogged.branch_id == 2 ? 'Fornecedores' : 'Empresas'}}</router-link></li>
+                            <li class="breadcrumb-item active" aria-current="page">Criar {{ userLogged.branch_id == 1 ? 'Fornecedor' : 'Empresa'}}</li>
                         </ol>
                     </nav>
                 </div>
@@ -94,6 +94,7 @@
             ValidationObserver
         },
         data: () => ({
+            userLogged: window.Laravel.user,
             users: {
                 image: {},
                 id: ''

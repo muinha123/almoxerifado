@@ -37,13 +37,6 @@ class AddForeignKeyInUsersSystemProfile extends Migration
         SystemProfile::create([
             'profile' => 'Cliente'
         ]);
-
-        User::create([
-            'name' => 'Admin',
-            'email' => 'admin@admin.com',
-            'system_profile_id' => 1,
-            'password' => Hash::make('123mudar')
-        ]);
     }
 
     /**

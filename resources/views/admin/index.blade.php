@@ -19,15 +19,33 @@
     </head>
 
     <body>
+
         <div class="preloader">
             <div class="lds-ripple">
                 <div class="lds-pos"></div>
                 <div class="lds-pos"></div>
             </div>
         </div>
+
         <div id="main-wrapper">
             <app></app>
         </div>
+
+        @if (\Illuminate\Support\Facades\Auth::check())
+            <script>
+                window.Laravel = {!!json_encode([
+               'isLoggedin' => true,
+               'user' => Auth::user()
+           ])!!}
+            </script>
+        @else
+            <script>
+                window.Laravel = {!!json_encode([
+                'isLoggedin' => false
+            ])!!}
+            </script>
+        @endif
+
         <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
         <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
         <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -40,5 +58,9 @@
         <script src="../../dist/js/custom.min.js"></script>
 
         <script src="{{ asset('js/app.js') }}"></script>
+
+        <script>
+            $(".preloader").fadeOut();
+        </script>
     </body>
 </html>

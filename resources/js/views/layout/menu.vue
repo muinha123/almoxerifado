@@ -50,6 +50,30 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                            <i class="fas fa-building"></i>
+                            <span v-if="user.branch_id == 1" class="hide-menu">Fornecedores</span>
+                            <span v-else class="hide-menu">Empresa</span>
+                            <span class="badge badge-inverse badge-pill ml-auto mr-3 font-medium px-2 py-1">6</span>
+                        </a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item">
+                                <router-link :to="{name: 'admin.company.list'}" class="sidebar-link">
+                                    <i class="fab fa-product-hunt"></i>
+                                    <span v-if="user.branch_id == 1" class="hide-menu">Lista de Fornecedores</span>
+                                    <span v-else class="hide-menu">Lista de Empresa</span>
+                                </router-link>
+                            </li>
+                            <li class="sidebar-item">
+                                <router-link :to="{name: 'admin.company.create'}" class="sidebar-link">
+                                    <i class="fas fa-plus"></i>
+                                    <span v-if="user.branch_id == 1" class="hide-menu">Criar Fornecedor</span>
+                                    <span v-else class="hide-menu">Criar Empresa</span>
+                                </router-link>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -58,7 +82,11 @@
 
 <script>
     export default {
-
+        data () {
+            return {
+                user: window.Laravel.user
+            }
+        }
     }
 </script>
 
