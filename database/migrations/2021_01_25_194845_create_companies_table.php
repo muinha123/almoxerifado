@@ -25,7 +25,7 @@ class CreateCompaniesTable extends Migration
             $table->string('number', 10)->nullable();
             $table->string('complement', 100)->nullable();
             $table->longText('description')->nullable();
-            $table->string('url')->nullable();
+            $table->string('image_company')->nullable();
             $table->timestamps();
 
             $table->foreign('branch_id')

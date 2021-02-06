@@ -19,7 +19,7 @@ class Company extends Model
         'uf',
         'description',
         'complement',
-        'url',
+        'image_company',
         'number'
     ];
 }
